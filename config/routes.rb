@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  root 'pages#index'
-  get 'pages/home' => 'pages#home'
-  get 'pages/profile'  => 'pages#profile'
-  get 'pages/explore'  => 'pages#explore'
-  get 'pages/help'  => 'pages#help'
-  get 'pages/edit'  => 'pages#edit'
+  devise_for :users
+  root  to: 'pages#index'
+  #define routes for pages
+  get '/home' => 'pages#home'
+  get '/profile'  => 'pages#profile'
+  get '/explore'  => 'pages#explore'
+  get '/help'  => 'pages#help'
+  get '/edit'  => 'pages#edit'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
